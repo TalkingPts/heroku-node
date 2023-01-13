@@ -2,6 +2,6 @@
 
 cat <<EOF
 default_process_types:
-  web: DISABLE_JOBS=TRUE .meteor/heroku_build/start.sh
-  worker: .meteor/heroku_build/start.sh
+  web: .heroku/node/bin/node DISABLE_JOBS=TRUE  $APP_CHECKOUT_DIR/main.js
+  worker: .heroku/node/bin/node $APP_CHECKOUT_DIR/main.js
 EOF
